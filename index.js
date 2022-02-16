@@ -14,7 +14,7 @@ server = http.createServer( function(req, res) {
                 res.end();
             });
         }else{
-            fs.readFile('403.html', function(err, page) {
+            fs.readFile('login.html', function(err, page) {
                 res.writeHead(403, {'Content-Type': 'text/html'});
                 res.write(page);
                 res.end();
@@ -22,14 +22,14 @@ server = http.createServer( function(req, res) {
         }
     }else
     {
-        if( req.url== "/home.html"){
+        if( req.url== "/home.html" || req.url== "/"){
             fs.readFile('home.html', function(err, page) {
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 res.write(page);
                 res.end();
             });
-        }else if( req.url=="/about.html"){
-            fs.readFile('about.html', function(err, page) {
+        }else if( req.url=="/blog.html"){
+            fs.readFile('blog.html', function(err, page) {
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 res.write(page);
                 res.end();
