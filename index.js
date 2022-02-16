@@ -4,9 +4,9 @@ const url = require("url");
 
 server = http.createServer( function(req, res) {
     // URL full path
-    let u = url.parse(req.url, true);
+    const u = url.parse(req.url, true);
     // URL query
-    let q= u.query;
+    const q= u.query;
     // if the query is not empty
     if(Object.keys(q).length !== 0){
         // if the role is admin linke: home.html?role:admin
